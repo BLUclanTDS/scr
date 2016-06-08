@@ -1,0 +1,98 @@
+//autow
+var interval;
+var switchy = false;
+$(document).on('keydown',function(e){
+console.log('keydown e.keyCode="'+e.keyCode+'"');
+if(e.keyCode == 81){
+console.log('keydown 81, switchy '+switchy);
+if(switchy){
+return;
+}
+switchy = true;
+interval = setInterval(function() {
+console.log('firing');
+$("body").trigger($.Event("keydown", { keyCode: 87}));
+$("body").trigger($.Event("keyup", { keyCode: 87}));
+}, 3);//increase this number to make it fire them out slower
+}
+})
+
+$(document).on('keyup',function(e){
+console.log('keyup e.keyCode="'+e.keyCode+'"');
+if(e.keyCode == 81){
+console.log('stop firing');
+switchy = false;
+clearInterval(interval);
+return;
+}
+});
+//endautow
+//autor
+var interval;
+var switchy = false;
+$(document).on('keydown',function(e){
+console.log('keydown e.keyCode="'+e.keyCode+'"');
+if(e.keyCode == 65){
+console.log('keydown 65, switchy '+switchy);
+if(switchy){
+return;
+}
+switchy = true;
+interval = setInterval(function() {
+console.log('firing');
+$("body").trigger($.Event("keydown", { keyCode: 82}));
+$("body").trigger($.Event("keyup", { keyCode: 82}));
+}, 3);//increase this number to make it fire them out slower
+}
+})
+
+$(document).on('keyup',function(e){
+console.log('keyup e.keyCode="'+e.keyCode+'"');
+if(e.keyCode == 65){
+console.log('stop firing');
+switchy = false;
+clearInterval(interval);
+return;
+}
+});
+//endoautor
+//16split
+$(document).on('keydown',function(e){
+if(e.keyCode == 83){
+for(var i = 0; i<8; i++){
+$("body").trigger($.Event("keydown", { keyCode: 32}));
+$("body").trigger($.Event("keyup", { keyCode: 32}));
+}
+}
+});
+//end16split
+//bot16split
+$(document).on('keydown',function(e){
+if(e.keyCode == 68){
+for(var i = 0; i<8; i++){
+$("body").trigger($.Event("keydown", { keyCode: 69}));
+$("body").trigger($.Event("keyup", { keyCode: 69}));
+}
+}
+})
+//endbot16split
+//Set
+setDarkTheme(true)
+setSmooth(true)
+setShowMass(true)
+//Endset
+//zoom?
+var allow_zoom = true;
+function bb() {
+        if (0 != n.length && !allow_zoom) {
+            for (var a = 0, b = 0; b < n.length; b++) a += n[b].size;
+            a = Math.pow(Math.min(64 / a, 1), .4) * Oa();
+            k = (9 * k + a) / 10
+        }
+    }
+    
+    function Zoom(e) {
+        allow_zoom && (k *= 1 + e.wheelDelta / 1e3);
+    }
+    "onwheel" in document ? document.addEventListener("wheel", Zoom) : "onmousewheel" in document ? document.addEventListener("mousewheel", Zoom) : document.addEventListener("MozMousePixelScroll", Zoom);
+//endzoom?
