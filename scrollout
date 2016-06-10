@@ -1,0 +1,20 @@
+Steps to get scroll out hack on custom agar client with ogar unlimited server.
+1. Open your agar.io client foler.
+2. Download Notepad++
+3. Open main_out.js with notepad++
+4. Do ctrl+f and search for: zoom *= Math.pow(.9, event.wheelDelta / -120 || event.detail || 0);
+5. When you found that go to the next line of code and chage the 1's to -1's.
+EXAMPLE :
+
+function handleWheel(event) {
+        zoom *= Math.pow(.9, event.wheelDelta / -120 || event.detail || 0);
+        -1 > zoom && (zoom = -1);
+        zoom > 4 / viewZoom && (zoom = 4 / viewZoom)
+    }
+
+6. Save file and open the index.html in chrome. Should have scroll out! :)
+=======================================================================================================
+//May be illegal.
+//It is not my fault if you are sued because you modded this.
+//Do this at your own risk.
+========================================================================================================
